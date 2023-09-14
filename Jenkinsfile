@@ -5,7 +5,7 @@ pipeline {
         APPROVAL_SECRET_TOKEN = 'MikeTest'
         // Define an environment variable to track approval status
         APPROVAL_STATUS = 'pending'
-         CURRENT_PATH = pwd()+'\\hakunamatata'
+         CURRENT_PATH = "${pwd()}\\hakunamatata"
     }
     stages{
          stage('Checkout') {
