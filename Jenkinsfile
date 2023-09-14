@@ -5,6 +5,7 @@ pipeline {
         APPROVAL_SECRET_TOKEN = 'MikeTest'
         // Define an environment variable to track approval status
         APPROVAL_STATUS = 'pending'
+         CURRENT_PATH = pwd()
     }
     stages{
          stage('Checkout') {
@@ -55,7 +56,7 @@ pipeline {
              env.approvalstatus = input message: 'You want to approve this build? ', ok: 'Submit', parameters: [choice(choices: ['Approved', 'Rejected'], name: 'ApprovalStatus')]
                 
                 echo env.approvalstatus
-                echo env.BUILD_PATH    
+                echo "Current Path: ${CURRENT_PATH}"
                 }
             }
         }
