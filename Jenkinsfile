@@ -68,7 +68,7 @@ pipeline {
             steps {
                 script {
                     echo 'Build approved. Proceeding with deployment.'
-                    bat 'msdeploy -verb:sync -source:contentPath="${CURRENT_PATH}" -dest:contentPath="C:\\WebSite1"'
+                    bat 'msdeploy -verb:sync -source:contentPath='${env.CURRENT_PATH}' -dest:contentPath="C:\\WebSite1"'
                     // Add your deployment steps here
                 }
             }
