@@ -68,13 +68,13 @@ pipeline {
             steps {
                 script {
                     echo 'Build approved. Proceeding with deployment.'
-                    bat 'msdeploy -verb:sync -source:contentPath="C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\ltibranchpipeline_UATForLionKing\\hakunamatata" -dest:contentPath="C:\\WebSite1"'
+                    bat 'msdeploy -verb:sync -source:contentPath="C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\ltibranchpipeline_UATForLionKing\\hakunamatata" -dest:contentPath="C:\\UATWebSite"'
                     // Add your deployment steps here
                 }
             }
             post {
                 always {
-                    jiraSendDeploymentInfo site: 'prissoft.atlassian.net', environmentId: 'QA-1', environmentName: 'QA', environmentType: 'QA'
+                    jiraSendDeploymentInfo site: 'prissoft.atlassian.net', environmentId: 'UAT-1', environmentName: 'UAT', environmentType: 'UAT'
                 }
             }
         }
