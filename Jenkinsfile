@@ -56,7 +56,7 @@ pipeline {
              env.approvalstatus = input message: 'You want to approve this build? ', ok: 'Submit', parameters: [choice(choices: ['Approved', 'Rejected'], name: 'ApprovalStatus')]
                 
                 echo env.approvalstatus
-                echo "Current Path: ${CURRENT_PATH}"
+                echo "Current Path: ${env.CURRENT_PATH}"
                 }
             }
         }
@@ -68,7 +68,7 @@ pipeline {
             steps {
                 script {
                     echo 'Build approved. Proceeding with deployment.'
-                    bat 'msdeploy -verb:sync -source:contentPath='${CURRENT_PATH}' -dest:contentPath="C:\\WebSite1"'
+                    bat 'msdeploy -verb:sync -source:contentPath='${env.CURRENT_PATH}' -dest:contentPath="C:\\WebSite1"'
                     // Add your deployment steps here
                 }
             }
