@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // Define Git credentials (if not already configured in Jenkins)
-                   git credentialsId: 'githubaccesstokenforjenkins', url: 'https://github.com/g34conflux/LionKing.git'
+                   git credentialsId: 'githubtokenforconflux', url: 'https://github.com/g34conflux/LionKing.git'
                 }
             }
         }
