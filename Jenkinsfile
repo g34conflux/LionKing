@@ -21,10 +21,17 @@ pipeline {
             steps {
                 script {
                     // Change the directory to the 'hakunamatata' directory
-                    bat 'cd hakunamatata'
+                 //   bat 'cd hakunamatata'
 
                     // Build the project using msbuild
-                    bat 'msbuild /t:Package hakunamatata/hakunamatata.csproj'
+                   // bat 'msbuild /t:Package hakunamatata/hakunamatata.csproj'
+
+                    cd hakunamatata
+                    dotnet build
+                    sudo rm -rf ./output
+                    sudo mkdir ./output
+                    sudo chmod 777 ./output
+                    dotnet publish -o ./output
                 }
             }
             post {
@@ -68,8 +75,9 @@ pipeline {
             steps {
                 script {
                     echo 'Build approved. Proceeding with deployment.'
-                    bat 'msdeploy -verb:sync -source:contentPath="C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\ultibranchpipeline_QAForLionKing\\hakunamatata" -dest:contentPath="C:\\QAWebSite1"'
+                  //  bat 'msdeploy -verb:sync -source:contentPath="C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\ultibranchpipeline_QAForLionKing\\hakunamatata" -dest:contentPath="C:\\QAWebSite1"'
                     // Add your deployment steps here
+                    sudo sshpass -p ZojItabtsGNCo003gluut8vz1Vc6hQx scp -i "/home/ubuntu/mumbai-key.pem" -o StrictHostKeyChecking=no -r ./output/ administrator@35.154.6.18:c:/my-publish
                 }
             }
             post {
