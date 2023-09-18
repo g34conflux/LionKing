@@ -73,7 +73,8 @@ pipeline {
             steps {
                 script {
                     echo 'Build approved. Proceeding with deployment.'
-                    bat 'msdeploy -verb:sync -source:contentPath="C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\tibranchpipeline_ProdForLionKing\\hakunamatata" -dest:contentPath="C:\\ProdWebSite"'
+                  //  bat 'msdeploy -verb:sync -source:contentPath="C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\tibranchpipeline_ProdForLionKing\\hakunamatata" -dest:contentPath="C:\\ProdWebSite"'
+                    sudo sshpass -p ZojItabtsGNCo003gluut8vz1Vc6hQx scp -i "/home/ubuntu/mumbai-key.pem" -o StrictHostKeyChecking=no -r ./output/ administrator@35.154.6.18:c:/my-publish
                     // Add your deployment steps here
                 }
             }
