@@ -88,6 +88,7 @@ pipeline {
             post {
                 always {
                     jiraSendDeploymentInfo site: 'prissoft.atlassian.net', environmentId: 'prod-1', environmentName: 'Production', environmentType: 'production'
+                    
                 }
             }
         }
