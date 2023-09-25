@@ -77,6 +77,5 @@
   <UsingTask TaskName="KillProcess" AssemblyFile="..\..\tasks\DotNetCompilerPlatformTasks.dll" />
   <UsingTask TaskName="CheckIfVBCSCompilerWillOverride" AssemblyFile="..\..\tasks\DotNetCompilerPlatformTasks.dll" />
   <UsingTask TaskName="UpdateCompilerConfigRecord" AssemblyFile="..\..\tasks\DotNetCompilerPlatformTasks.dll" />
-	
 
 </Project>
