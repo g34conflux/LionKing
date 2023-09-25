@@ -26,7 +26,7 @@ pipeline {
                  //   bat 'msbuild /t:Package hakunamatata/hakunamatata.csproj'
 
                     // cd hakunamatata
-               bat 'msbuild hakunamatata/hakunamatata.csproj'
+                bat 'msbuild hakunamatata/hakunamatata.csproj'
                     //dotnet build
                    // sudo rm -rf ./output
                   //  sudo mkdir ./output
