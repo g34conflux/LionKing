@@ -20,13 +20,13 @@ pipeline {
             steps {
                 script {
                     // Change the directory to the 'hakunamatata' directory
-                 //   bat 'cd hakunamatata'
+                   bat 'cd hakunamatata'
 
                     // Build the project using msbuild
                  //   bat 'msbuild /t:Package hakunamatata/hakunamatata.csproj'
 
-                    cd hakunamatata
-                    bat 'msbuild hakunamatata/hakunamatata.csproj'
+                    // cd hakunamatata
+                   bat 'msbuild hakunamatata/hakunamatata.csproj'
                     //dotnet build
                    // sudo rm -rf ./output
                   //  sudo mkdir ./output
