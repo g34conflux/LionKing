@@ -7,14 +7,14 @@ pipeline {
         APPROVAL_STATUS = 'pending'
     }
     stages{
-         stage('Checkout') {
-            steps {
-                script {
-                    // Define Git credentials (if not already configured in Jenkins)
-                   git credentialsId: 'githubtokenforconflux', url: 'https://github.com/g34conflux/LionKing.git'
-                }
-            }
-        }
+        //  stage('Checkout') {
+        //     steps {
+        //         script {
+        //             // Define Git credentials (if not already configured in Jenkins)
+        //            git credentialsId: 'githubtokenforconflux', url: 'https://github.com/g34conflux/LionKing.git'
+        //         }
+        //     }
+        // }
        
         stage('Build') {
             steps {
