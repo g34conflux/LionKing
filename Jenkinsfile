@@ -26,11 +26,12 @@ pipeline {
                  //   bat 'msbuild /t:Package hakunamatata/hakunamatata.csproj'
 
                     cd hakunamatata
-                    dotnet build
-                    sudo rm -rf ./output
-                    sudo mkdir ./output
-                    sudo chmod 777 ./output
-                    dotnet publish -o ./output
+                    bat 'msbuild hakunamatata/hakunamatata.csproj'
+                    //dotnet build
+                   // sudo rm -rf ./output
+                  //  sudo mkdir ./output
+                 //   sudo chmod 777 ./output
+                 //   dotnet publish -o ./output
                 }
             }
             post {
