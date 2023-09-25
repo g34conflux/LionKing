@@ -74,7 +74,7 @@ pipeline {
             steps {
                 script {
                     echo 'Build approved. Proceeding with deployment.'
-                   bat 'msdeploy -verb:sync -source:contentPath="C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\multibranchpipeline_master\\hakunamatata" -dest:contentPath="C:\\DevWebSite"'
+                   bat 'msdeploy -verb:sync -source:contentPath="C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\MyPipelineForAWS\\hakunamatata" -dest:contentPath="C:\\DevWebSite"'
                     // Add your deployment steps here
                  //   sh '''
                  // cd hakunamatata
