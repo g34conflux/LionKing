@@ -77,9 +77,9 @@ pipeline {
                    // bat 'msdeploy -verb:sync -source:contentPath="C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\multibranchpipeline_master\\hakunamatata" -dest:contentPath="C:\\DevWebSite"'
                     // Add your deployment steps here
                     sh '''
-                  cd WebApplication1/WebApplication1/
+                  cd hakunamatata
 
-                  sudo sshpass -p ZojItabtsGNCo003gluut*8vz1Vc6hQx scp -i "/var/lib/jenkins/workspace/dotnet/mumbai-key.pem" -o StrictHostKeyChecking=no -r ./output/* administrator@35.154.6.18:c:/my-publish
+                  sudo sshpass -p ZojItabtsGNCo003gluut*8vz1Vc6hQx scp -i "C:/mumbai-key.pem" -o StrictHostKeyChecking=no -r ./output/* administrator@35.154.6.18:c:/my-publish
 
                 '''   
                  //sudo sshpass -p ZojItabtsGNCo003gluut8vz1Vc6hQx scp -i "/home/ubuntu/mumbai-key.pem" -o StrictHostKeyChecking=no -r ./output/ administrator@35.154.6.18:c:/my-publish
