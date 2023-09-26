@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
         steps {
         script {
-            Define Git credentials (if not already configured in Jenkins)
+            //Define Git credentials (if not already configured in Jenkins)
             git credentialsId: 'githubtokenforconflux', url: 'https://github.com/g34conflux/LionKing.git'
         }
         }
